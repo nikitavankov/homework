@@ -29,6 +29,7 @@ backend-service
 mongodb-service
 
 Доступ к приложению
+
 После успешного развертывания получите URL для доступа к фронтенду:
 
 
@@ -38,10 +39,11 @@ NODE_IP=$(kubectl get nodes -o jsonpath='{.items[0].status.addresses[?(@.type=="
 echo "Откройте в браузере: http://$NODE_IP:$NODE_PORT"
 
 Структура манифестов Kubernetes
+
 В директории deploy/ находятся следующие файлы:
 
 	Файл /	Назначение
-	namespace.yaml	               / Создает namespace task-board
+	namespace.yaml	               /    Создает namespace task-board
 	configmap.yaml                 /	Переменные окружения (аналогично docker-compose)
 	secret.yaml                    /	Учетные данные для MongoDB
 	mongodb-deployment.yaml        /	Deployment для MongoDB с использованием emptyDir volume
